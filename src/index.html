@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreeJS Starter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <main>
+        <div class="menu hide">
+            <a class="modern_menu" href="#">
+                <div class="line"></div>
+                <div class="line"></div>
+            </a>
+            <ul>
+                <li class="__link1"><a class="active" href="#">
+                    Home
+                </a></li>
+                <li class="__link2"><a href="#">Services</a></li>
+                <li class="__link3"><a href="#">About</a></li>
+                <li class="__link4"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <header>
+            <div class="head">
+                <div class="logo">GO.</div>
+                <a class="modern_menu" href="#">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </a>
+            </div>
+            <div class="head_body">
+                <div class="back_text">
+                    <p>OUR DESIGN</p>
+                </div>
+                <div class="front_text">
+                    <p>YOUR GROWTH</p>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laudantium sunt aspernatur eos iste esse voluptates iusto optio reiciendis, omnis quasi dolor deserunt magnam amet.
+                </p>
+            </div>
+            <div class="head_footer">
+                <div class="line"></div>
+                <nav>
+                    <ul>
+                        <li><a class="action" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a></li>
+                        <li><a class="action" href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a></li>
+                        <li><a class="action" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a></li>
+                    </ul>
+                </nav>
+                <!-- <div class="line"></div> -->
+            </div>
+            <div class="check">
+                <div>
+                    <div class="circle circle3"></div>
+                    <div class="circle circle2"></div>
+                    <div class="circle circle1"></div>
+                </div>
+            </div>
+            <canvas class="webgl"></canvas>
+        </header>
+        <section class="passion">
+            <div class="left">
+                <div class="img_wrap">
+                    <img src="./img/passion.jpg" alt="passion">
+                </div>
+            </div>
+            <div class="right">
+                <h1>Hard Work _____</h1>
+                <h6>Our Client Our Responsibility</h6>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem quod vitae ad, accusamus nam non veniam eos impedit assumenda animi, quisquam tenetur odit quos! Tempora architecto aspernatur distinctio quisquam voluptates blanditiis, ratione laborum voluptatem quae reprehenderit accusantium quibusdam quos explicabo minus animi sequi repellendus provident minima nemo nihil. Asperiores, molestias!
+                </p>
+                <a class="btn_primary passion_btn" href="#">Learn More</a>
+            </div>
+        </section>
+        <section class="stuff">
+            <h1>
+                We Make 
+                <div>
+                    <span>Stuff</span>
+                    <div></div>
+                </div> 
+                Happen
+            </h1>
+        </section>
+        <footer>
+            <p>GO. Copyright 2021. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js" integrity="sha512-lIKG1kC5TMb1Zx32vdz1n31YJMZRknVY20U9MJ28hD3y2c0OKN0Ce5NhJji78v8zX5UOSsm+MTBOcJt7yMBnSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js" integrity="sha512-UgS0SVyy/0fZ0i48Rr7gKpnP+Jio3oC7M4XaKP3BJUB/guN6Zr4BjU0Hsle0ey2HJvPLHE5YQCXTDrx27Lhe7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./plugins/addIndicators.js"></script>
+    <script src="./plugins/animate.gsap.js"></script>
+    <script>
+        var controller = new ScrollMagic.Controller();
+
+        const headerAnimate = () => {
+
+        }
+
+        const navbarAnimate = (controller) => {
+            var navbar = new ScrollMagic.Scene({
+                triggerElement: ".passion"
+            })
+            .setTween(".head", .3, {backgroundColor: "#7f28d7", position: 'fixed', zIndex: 500, width: '100%', padding: '10px 40px'})
+            .addTo(controller);
+        }
+
+        const passionAnimate = (controller) => {
+            var section = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion", 0.5, {
+                backgroundColor: "rgb(220, 220, 220)"
+            })
+            .addTo(controller);
+
+            var img = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion .right h1", 0.3, {
+                backgroundColor: "#7f28d7", 
+                opacity: 1,
+                width: '100%',
+                onComplete(){
+                    gsap.to('section.passion .right h1', {
+                        backgroundColor: "",
+                    })
+                }
+            })
+            .addTo(controller);
+
+            var h1 = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion .img_wrap", 0.5, {
+                opacity: 1,
+                border: '1px solid #7f28d7',
+                onComplete(){
+                    gsap.to('section.passion .img_wrap', {
+                        border: '1px solid white',
+                    })
+                }
+            })
+            .addTo(controller);
+            
+            var h6 = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion .right h6", 0.3, {
+                backgroundColor: "#7f28d7", 
+                opacity: 1,
+                width: '100%',
+                onComplete(){
+                    gsap.to('section.passion .right h6', {
+                        backgroundColor: "",
+                    })
+                }
+            })
+            .addTo(controller);
+            
+            var p = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion .right p", 0.3, {
+                backgroundColor: "#7f28d7", 
+                opacity: 1,
+                width: '100%',
+                onComplete(){
+                    gsap.to('section.passion .right p', {
+                        backgroundColor: "",
+                    })
+                }
+            })
+            .addTo(controller);
+
+            var img = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion .right .gallery", 0.3, {
+                backgroundColor: "#7f28d7", 
+                opacity: 1,
+                width: '100%',
+                onComplete(){
+                    gsap.to('section.passion .right .gallery', {
+                        backgroundColor: "",
+                    })
+                }
+            })
+            .addTo(controller);
+
+            var btn = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion .right .passion_btn", 0.2, {
+                delay: .5,
+                backgroundColor: "#7f28d7", 
+                opacity: 1,
+                width: '100%',
+                onComplete(){
+                    gsap.to('section.passion .right .passion_btn', {
+                        backgroundColor: "",
+                    })
+                }
+            })
+            .addTo(controller);
+        }
+
+        const stuffAnimate = (controller) => {
+            var header = new ScrollMagic.Scene({
+                triggerElement: "section.passion"
+            })
+            .setTween("section.passion .right h1", 0.3, {
+                backgroundColor: "#7f28d7", 
+                opacity: 1,
+                width: '100%',
+                onComplete(){
+                    gsap.to('section.passion .right h1', {
+                        backgroundColor: "",
+                    })
+                }
+            })
+            .addTo(controller);
+        }
+
+        const menuAnimate = () => {
+            const close = document.querySelector('.menu .modern_menu')
+            const open = document.querySelector('header .modern_menu')
+            const menu = document.querySelector('.menu')
+            close.addEventListener('click', () => {
+                const timeline = gsap.timeline()
+                
+                timeline.to('.menu .__link4', 0.1, {
+                    x: '-20px',
+                    opacity: 0
+                })
+                .to('.menu .__link3', 0.1, {
+                    x: '-20px',
+                    opacity: 0
+                })
+                .to('.menu .__link2', 0.1, {
+                    x: '-20px',
+                    opacity: 0
+                })
+                .to('.menu .__link1', 0.1, {
+                    x: '-20px',
+                    opacity: 0
+                })
+                .to(menu, 1,{
+                    width: '0',
+                    opacity: 0,
+                    ease: Expo.easeInOut,
+                    onComplete(){
+                        menu.classList.add('hide')
+                        gsap.to('.menu .__link4, .menu .__link3, .menu .__link2, .menu .__link1', 0.1, {
+                            x: '0px',
+                            opacity: 1
+                        })                    
+                    }
+                })
+            })
+
+            open.addEventListener('click', () => {
+                menu.classList.remove('hide')
+                const timeline = gsap.timeline()
+                
+                timeline.to(menu, 1,{
+                    width: '100vw',
+                    opacity: 1,
+                    ease: Expo.easeInOut,
+                })
+                .from('.menu .__link1', 0.2, {
+                    x: '-20px',
+                    opacity: 0
+                })
+                .from('.menu .__link2', 0.2, {
+                    x: '-20px',
+                    opacity: 0
+                })
+                .from('.menu .__link3', 0.2, {
+                    x: '-20px',
+                    opacity: 0
+                })
+                .from('.menu .__link4', 0.2, {
+                    x: '-20px',
+                    opacity: 0
+                })
+            })
+        }
+        
+        const animateChecker = () => {
+            const check = document.querySelector('header .check')
+            check.addEventListener('mouseenter', () => {
+                gsap.to('.circle', 0.3, {
+                    duration: 1,
+                    width: '30px',
+                    height: '30px',
+                    stagger: 0.1
+                })
+            })
+            check.addEventListener('mouseleave', () => {
+                gsap.to('.circle', 0.3, {
+                    duration: 1,
+                    width: '0px',
+                    height: '0px',
+                    stagger: 0.1,
+                    onComplete(){
+                        gsap.to('.circle1', {
+                            delay: .2,
+                            width: '10px',
+                            height: '10px',
+                        })
+                    }
+                })
+            })
+            
+            check.addEventListener('click', () => {
+                let clicked = false, scale = .8
+                if(check.classList.contains('clicked')){
+                    clicked = true
+                    scale = 1
+                }
+
+                gsap.to('main', 1.2, { 
+                    scale,
+                    ease: Expo.easeInOut,
+                    onComplete(){
+                        if(clicked)
+                            check.classList.remove('clicked')
+                        else 
+                            check.classList.add('clicked')
+                    }
+                })
+            })
+        }
+
+        headerAnimate()
+        passionAnimate(controller)
+        stuffAnimate(controller)
+        menuAnimate()
+        animateChecker()
+    </script>
+</body>
+</html>

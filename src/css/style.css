@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+:root{
+
+    --primary: #7f28d7;
+    --secondary: #0a0311;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.hide{
+    display: none !important;
+}
+
+.show{
+    display: initial !important
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body{
+    height: 100%;
+    overflow-x: hidden;
+    background: rgb(55, 54, 54);
+}
+
+.webgl{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    outline: none;
+}
+
+main{
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(to top, rgb(33, 33, 33), var(--secondary));
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5)
+}
+
+header{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+header .check{
+    position: absolute;
+    bottom: 25px;
+    right: 50px;
+    cursor: pointer;
+}
+header .check:hover>div{
+    border-color: var(--primary);
+}
+
+.check>div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: .3s all ease-in-out
+}
+.check>div>div.circle{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: .3s all ease-in-out
+}
+.circle3{
+    z-index: 1;
+    background: white
+}
+.circle2{
+    z-index: 2;
+    background: black
+}
+.circle1{
+    z-index: 3;
+    background: white
+}
+
+
+.menu{
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 500;
+    background:rgb(220, 220, 220);
+    display: grid;
+    place-items: center;
+    opacity: 0;
+}
+
+.menu .modern_menu{
+    position: absolute;
+    z-index: 600;
+    top: 40px;
+    right: 50px;
+}
+.menu .modern_menu .line{
+    background: black;
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    width: 25px;
+}
+.menu .modern_menu .line:nth-child(1){
+    transform: rotate(35deg);
+    transform: translate(-1px, -1px) 
+                rotate(-45deg);
+}
+.menu .modern_menu .line:nth-child(2){
+    width: 25px;
+    transform:  translate(-1px, -3px) 
+                rotate(45deg);
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+}
+.menu ul li{
+    margin-bottom: 20px;
+}
+.menu ul li:last-child{
+    margin-bottom: 0px;
+}
+
+.menu ul li a {
+    font: 300 normal 50px 'Archivo Black', sans-serif;
+    color: black;
+    padding: 0;
+    transition: .3s all ease-in-out
+}
+
+.menu ul li a.active:before{
+    content: '.';
+    font-size: 50px;
+}
+.menu ul li a.active{
+    color: var(--primary);
+}
+.menu ul li a:hover{
+    color: var(--primary);
+}
+
+.head{
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.head .logo{
+    font: 300 normal 20px 'Archivo Black', sans-serif
+}
+
+.head .menu{
+    font-size: 16px;
+    color: white;
+    opacity: .7;
+    transition: .3s all cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.head .menu:hover{
+    opacity: 1;
+}
+
+.modern_menu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.modern_menu .line{
+    margin-bottom: 5px;
+    height: 1.5px;
+    width: 25px;
+    border-radius: 5px;
+    background: white;
+    transition:.3s all cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.modern_menu .line:nth-child(2){
+    width: 15px;
+    height: 2px;
+}
+
+.modern_menu:hover .line:nth-child(2){
+    width: 25px;
+}
+
+.modern_menu:hover .line{
+    background: var(--primary);
+}
+
+.head_body{
+    position: absolute;
+    margin: 50px 50px;
+    padding: 20px 20px;
+    border-left: 1px solid white;
+}
+
+.head_body .back_text p{
+    font: 300 normal 40px 'Archivo Black', sans-serif;
+    color: var(--primary)
+}
+
+.head_body .front_text p{
+    font: 300 normal 40px 'Archivo Black', sans-serif;
+}
+
+.head_body>p{
+    width: 40%;
+    margin-top: 30px;
+    font: 300 normal 14px 'Montserrat', sans-serif;
+}
+
+.head_footer{
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.head_footer nav ul{
+    display: flex;
+    font: 300 normal 14px 'Montserrat', sans-serif;
+}
+
+.head_footer nav ul>li{
+    margin-right: 20px;
+}
+
+.head_footer nav ul>li:last-child{
+    margin-right: 0;
+}
+
+.head_footer .action{
+    font: 400 normal 14px 'Montserrat', sans-serif;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: .3s all cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.head_footer .action:hover{
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: white;
+}
+
+.head_footer nav ul li:last-child a{
+    padding: 8px 10px;
+}
+
+.head_footer .line{
+    height: 1px;
+    width: 50px;
+    background: white;
+}
+
+.head_footer>div:nth-child(1){
+    margin-right: 10px;
+}
+
+.head_footer>nav{
+    margin-right: 10px;
+}
+
+section.passion{
+    max-height: 400px;
+    background: var(--primary);
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 150px;
+    /* transform: translateX(-1%); */
+    margin: 0 !important;
+}
+
+.passion .left .img_wrap{
+    width: 350px;
+    height: 300px;
+    border: none;
+    padding: 20px;
+    opacity: 0,
+}
+.passion .left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.passion .right{
+    width: 50%;
+}
+
+.passion .right h1{
+    font: 300 normal 26px 'Archivo Black', sans-serif;
+    margin-bottom: 10px;
+    opacity: 0;
+    width: 0%
+}
+.passion .right h6{
+    font: 400 normal 18px 'Montserrat', sans-serif;    
+    margin-bottom: 30px;
+    opacity: 0;
+    width: 0%
+}
+.passion .right p{
+    font: 300 normal 14px 'Montserrat', sans-serif;    
+    margin-bottom: 40px;
+    text-align: justify;
+    opacity: 0;
+    width: 0%
+}
+.passion .passion_btn{
+    width: 0;
+    opacity: 0;
+}
+
+.stuff{
+    height: 100vh;
+    width: 100vw;
+    background: rgb(33, 33, 33);
+    color: white;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font: 300 normal 100px 'Archivo Black', sans-serif
+}
+
+.stuff h1>div{
+    position: relative;
+    display: flex;
+    flex-direction: column
+}
+
+.stuff h1>div>span{
+    position: relative;
+    z-index: 2;
+}
+.stuff h1>div>div{
+    position: absolute;
+    z-index: 1;
+    bottom: 20%;
+    left: 24%;
+    opacity: .8;
+    height: 50px;
+    width: 500px;
+    background: linear-gradient(to right, var(--primary), transparent)
+}
+
+footer{
+    background: rgb(220, 220, 220);
+    color: black;
+    font: 500 normal 14px 'Montserrat', sans-serif;    
+    text-align: center;
+    padding: 20px;
+}
+
+/* btn */
+.btn_primary{
+    background: var(--primary);
+    color: white;
+    border: 1px solid transparent;
+    font: 400 normal 14px 'Montserrat', sans-serif;    
+    padding: 10px 15px;
+    transition: .3s all ease-in-out;
+
+}
+
+.btn_primary:hover{
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
