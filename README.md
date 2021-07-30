@@ -1,2 +1,2 @@
-# 7-alpha-map-effect
+# 7-design-agency-webgl-landingpage
 AlphaMap Effects &amp; Animations
