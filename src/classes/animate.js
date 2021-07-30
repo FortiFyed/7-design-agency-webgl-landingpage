@@ -1,3 +1,6 @@
+/**
+ * @desc animation achieved using gsap and scrollmagic
+*/
 class Animate{
     constructor() {
         this.controller = new ScrollMagic.Controller();

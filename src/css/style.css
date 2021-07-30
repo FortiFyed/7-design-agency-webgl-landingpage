@@ -447,7 +447,7 @@ section.slider .btn_close{
 }
 section.slider .btn_close:hover{
     color: white;
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 /* btn */
