@@ -6,6 +6,7 @@ const path = require('path')
 module.exports = {
     entry: [
         path.resolve(__dirname, '../src/js/script.js'),
+        path.resolve(__dirname, '../src/js/slider.js'),
         path.resolve(__dirname, '../src/js/controls.js'),
     ],
     output:

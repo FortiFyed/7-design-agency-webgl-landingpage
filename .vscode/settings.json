@@ -1,0 +1,8 @@
+{
+    "editor.rename.enablePreview": true,
+    "editor.cursorStyle": "block-outline",
+    "editor.formatOnSave": true,
+    "//": {
+        "editor.fontFamily": "monospace",
+    }
+}
